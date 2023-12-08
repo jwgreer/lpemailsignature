@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LoanPro Signature Generator</title>
+</head>
+
+<body>
+    <div class="container">
+      <img src="https://www.loanpro.io/wp-content/uploads/2022/11/loanpro-logo-white.png" class="logo">
+        <main>
+            <div class="form">
+                <h3>1. Enter Details</h3>
+                <div class="box">
+                    <p>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Enter your name">
+                    </p>
+                    <p>
+                        <label for="role">Role </label>
+                        <input type="text" name="role" placeholder="Enter your role">
+                    </p>
+                    <p>
+                        <label for="phone">Phone </label>
+                        <input type="text" name="phone" placeholder="Enter your phone number">
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="signature">
+                <h3>2. Review and Copy</h3>
+                <div class="box">
+                    <div class="preview" style="padding-bottom: 25px;">
+                      <div style="overflow:hidden; font-family: Arial,Helvetica Neue,Helvetica,sans-serif;">
+                        <div style="float:left; border-right: 2px solid #254E63; padding: 2px 5px 2px 0;">
+                          <img src="https://www.loanpro.io/wp-content/uploads/2022/11/signature-logo.png" style="width: 60px;">
+                        </div>
+                        <div style="float: left; padding-left: 10px; margin-top: 4px;">
+                          <p style="color: #202C36; padding: 0; margin: 0; font-size: 15px; font-weight: bold;" id="name"></p>
+                          <p style="color: #F7901E; padding: 0; margin: 0; font-size: 12px;" id="role"></p>
+                          <div style="color: #202C36; padding: 0; margin: 0; font-size: 12px; margin-top: 5px; font-weight: bold;">
+                            <span><a href="https://loanpro.io/" style="color: #202C36; text-decoration: none!important; border-right: 2px solid #F7901E; padding-right: 5px;">loanpro.io</a></span>
+                            <span style="padding-left: 1px;" id="phone">(800) 559-4776</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="actions">
+                        <p>Select the signature and copy it to the clipboard:</p>
+                        <p><img src="https://www.loanpro.io/wp-content/uploads/2022/11/signature-select.gif" alt="Select and Copy"
+                                class="gif"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="install">
+                <h3>3. Paste in Gmail</h3>
+                <div class="box">
+                    <div>
+                        <p>In Gmail,</p>
+                        <ol>
+                            <li>Go to Settings &rarr; See all settings &rarr; General tab</li>
+                            <li>Scroll down to Signature and
+                                paste the contents of your
+                                clipboard in the box</li>
+                            <li>Scroll down and save changes</li>
+                        </ol>
+
+                        <p>Now you're all set!</p>
+                    </div>
+                    <div class="paste">
+                        <img src="https://www.loanpro.io/wp-content/uploads/2022/11/signature-paste.gif" alt="Paste">
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+<script>
+(function () {
+  const cells = [
+    document.getElementById("name"),
+    document.getElementById("role"),
+    document.getElementById("phone"),
+  ];
+
+  var fields = [
+    document.querySelector("input[name=name]"),
+    document.querySelector("input[name=role]"),
+    document.querySelector("input[name=phone]"),
+  ];
+
+  function update() {
+    for (i = 0; i <= 6; i++) {
+      cells[i].innerHTML = fields[i].value;
+    }
+  }
+
+  // SETUP AUTO-UPDATING
+  (function () {
+    fields.forEach(function (field) {
+      field.addEventListener("change", update);
+    });
+  })();
+})();
+</script>
+
+</body>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #27313f;
+  font-family: sans-serif;
+  color: #131a23;
+  line-height: 1.5;
+  padding: 0 calc(50% - 500px);
+}
+
+.logo {
+  width: 300px;
+  margin: 30px auto 0;
+  display: block;
+}
+
+header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30vw;
+  padding: 80px 50px;
+  box-shadow: 8px 0 32px rgba(9, 6, 46, 0.13);
+}
+
+main {
+  padding: 70px 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 32px;
+  align-items: start;
+}
+
+.install {
+  grid-column: span 2;
+}
+
+.box {
+  background: #fff;
+  padding: 5px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 32px rgba(9, 6, 46, 0.13);
+  overflow: hidden;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+h1 strong {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: strong;
+}
+
+h3 {
+  padding: 0 0 20px 25px;
+  margin: 0;
+  color: #FFF;
+}
+
+.form .box,
+.install .box {
+  border-left: 5px solid #FF9100;
+}
+
+.box p {
+  margin: 20px 0;
+}
+
+.signature .box {
+  padding: 25px 0 0 0;
+  overflow: hidden;
+}
+
+.signature table {
+  position: relative;
+  top: -25px;
+}
+
+.preview {
+  background: #fff;
+  padding: 0 25px 5px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.signature .actions {
+  padding: 20px 50px;
+  background: #B8BBC0;
+}
+
+.signature .copy {
+  padding: 10px 20px;
+  background: #ff5500;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+hr {
+  border: none;
+  border: 1px solid #e0e4e8;
+  margin: 3rem auto;
+  width: 50%;
+}
+
+input, select {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  padding: 5px 0;
+}
+
+.gif {
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+.install .box {
+  padding: 0;
+  display: flex;
+  
+}
+
+.install .box> :first-child {
+  padding: 5px 25px;
+}
+
+.paste {
+  width: 350px;
+  background: #B8BBC0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
+}
+
+.paste img {
+  width: 260px;
+  height: auto;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1280px) {
+  body {
+    padding: 0;
+  }
+  header {
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 140px;
+    min-width: 980px;
+  }
+  main {
+    padding-top: 0;
+    margin-top: -80px;
+    min-width: 980px;
+  }
+}
+</style>
+
+</html>
